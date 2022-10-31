@@ -6,6 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import React from "react";
 import LogoImage from "./logoImage";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme: Theme) => ({
   grow: {
@@ -131,6 +132,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 function TopNavBar() {
+  const router = useRouter();
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -178,8 +180,8 @@ function TopNavBar() {
                 <span>Blog</span>
               </div>
 
-              <Button variant="contained" color="primary">
-                Get a Demo
+              <Button variant="contained" color="primary" onClick={()=>{router.push("/login")}} >
+                Get Started
               </Button>
             </Box>
 

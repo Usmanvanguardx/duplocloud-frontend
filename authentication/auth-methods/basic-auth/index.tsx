@@ -18,7 +18,7 @@ export const useProvideAuth = () => {
     const response = await POST("/auth/local", { identifier, password });
     if (!response.error) {
       setAuthUser(response.user);
-      router.push("/home");
+      router.push("/");
     } else {
       setSignInErrors({
         isValid: true,
@@ -39,7 +39,7 @@ export const useProvideAuth = () => {
     });
     if (!response.error) {
       setAuthUser(response.user);
-      router.push("/home");
+      router.push("/");
     } else {
       setSignupErrors({
         isValid: true,

@@ -12,7 +12,7 @@ const AuthPage = ({ children }: children) => {
 
   useEffect(() => {
     if (authUser) {
-      router.push("/home").then((r) => r);
+      router.push("/").then((r) => r);
     }
   }, [authUser]);
 
